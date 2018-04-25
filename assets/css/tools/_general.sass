@@ -1,0 +1,32 @@
+.body
+    background: $primary
+    color: white
+    font-family: 'Gotham HTF Light'
+    font-weight: 300 
+
+.body,main,html 
+    min-width: 300px
+
+main 
+    position: relative
+
+.wrapper
+    background: url(assets/imgs/artwork.png) 30vw center no-repeat transparent
+    @extend .flex
+    flex-flow: column 
+    justify-content: space-between
+    height: auto
+    min-height: 100vh
+    overflow: hidden
+    position: relative
+    width: 100% 
+
+@media only screen and (max-width: 737px)
+    main
+        padding: 0 0 30px
+@media only screen and (min-height: 375px) and (min-width: 812px) and (max-width: 990px)
+    main 
+        padding: 100px 0
+@media only screen and (max-width: 640px)
+    .wrapper 
+        background-position: 10vw calc(50% + 66vw)

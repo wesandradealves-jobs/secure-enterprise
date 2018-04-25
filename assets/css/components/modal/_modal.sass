@@ -1,0 +1,48 @@
+.modal
+    align-items: center
+    background-color: transparentize(black,0.3)
+    display: none
+    flex-flow: column
+    justify-content: center
+    height: 100%
+    left: 0
+    padding: 50px
+    position: fixed
+    top: 0
+    width: 100%
+    z-index: 10
+    .modal-content 
+        height: 100%
+    &.-on
+        @extend .flex
+    >.modal-body
+        +border(20px)
+        background-color: white 
+        position: relative
+        width: 100% 
+        iframe,img,object  
+            display: block 
+            width: 100%
+        [class*="close"]
+            &::before 
+                content: "X"
+                font-family: 'Gotham HTF Light' 
+            color: white
+            display: block 
+            font-size: 2.5rem
+            margin: 5px -25px
+            position: absolute
+            top: 0
+            right: 0
+        .iframe
+            padding-bottom: calc(50% - 60px)
+@media only screen and (max-width: 1280px) 
+    .modal
+        padding: 30px 40px
+        .modal-content
+            height: 100%
+        .modal-body
+            height: 100%
+            .iframe 
+                padding-bottom: 0
+                height: 100%

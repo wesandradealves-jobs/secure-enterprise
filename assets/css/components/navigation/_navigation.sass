@@ -1,0 +1,88 @@
+.navigation
+    >ul 
+        >li 
+            >a 
+                &:not(.btn):hover 
+                    text-decoration: underline !important
+            display: inline-block
+            font-size: 1.2rem
+            text-transform: uppercase
+            vertical-align: middle
+            &:not(:first-child)
+                padding-left: 15px
+    &.-mobile
+        display: none
+        max-height: 0
+        overflow: hidden 
+        &.-on   
+            display: block
+            max-height: 500px
+            +height(.2s)
+        >ul 
+            >li 
+                background-color: $primary
+                color: white
+                border-bottom: 1px rgba(255,255,255,.2) solid
+                display: block 
+                padding: 15px!important
+                &:not(:first-child)
+                    padding-left: 0                
+    &.-lateral
+        @extend .flex
+        flex-flow: column 
+        justify-content: center 
+        height: 100%
+        left: 0
+        position: absolute
+        top: 0
+        width: 80px
+        z-index: 2
+        >ul 
+            >li 
+                >a 
+                    position: relative
+                    &::after 
+                        background: $primary 
+                        background: -moz-linear-gradient(left, $primary 0%, $secondary 100%)
+                        background: -webkit-linear-gradient(left, $primary 0%,$secondary 100%) 
+                        background: linear-gradient(to right, $primary 0%,$secondary 100%) 
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$primary', endColorstr='$secondary',GradientType=1 )
+                        content: ""
+                        display: none 
+                        height: 2px
+                        left: 0
+                        margin: 2px 0
+                        position: absolute
+                        top: 100%
+                        width: 100%
+                    &:hover 
+                        text-decoration: none!important
+                        &::after 
+                            display: block
+                &:not(:first-child)
+                    padding-left: 30px
+            left: -140px
+            position: relative
+            transform: rotate(-90deg)
+            transform-origin: center
+            width: 360px 
+@media only screen and (max-width: 1024px)  
+    .navigation 
+        >ul 
+            >li 
+                >a 
+                    &:not(.btn):hover 
+                        text-decoration: none!important   
+        &.-lateral     
+            >ul  
+                >li 
+                    >a:hover::after
+                        display: none!important
+@media only screen and (max-width: 737px)
+    .navigation 
+        &.-lateral
+            display: none
+@media only screen and (min-height: 375px) and (min-width: 812px) and (max-width: 990px)
+    .navigation
+        &.-lateral
+            top: -45px

@@ -1,0 +1,64 @@
+.banner
+    padding-left: 140px
+    padding-right: 140px
+    position: relative
+    z-index: 1
+    h2 
+        color: rgba(255,255,255,.7)
+        display: block 
+        max-width: 520px
+        margin: 30px 0
+    .play
+        +border(999px)
+        border: 1px white solid
+        display: inline-block
+        height: 35px
+        line-height: 35px
+        margin: -10px 15px -10px -20px
+        text-align: center
+        vertical-align: middle
+        width: 35px
+@media only screen and (max-width: 768px)
+    .banner 
+        .navigation
+            >ul 
+                >li 
+                    &:not(:first-child) 
+                        padding-left: 0
+                    &:not(:last-child)
+                        margin-bottom: 15px
+                    &::after 
+                        clear: both 
+                        content: ""
+                        display: block
+                    display: block
+                    >.btn 
+                        float: left
+@media only screen and (max-width: 737px)
+    .banner 
+        padding-left: 20px
+        padding-right: 20px
+@media only screen and (max-width: 640px)
+    .banner
+        .navigation
+            >ul 
+                >li 
+                    margin-left: auto 
+                    margin-right: auto 
+                    max-width: 210px
+                    >.btn 
+                        .play
+                            margin-left: -54px
+                            margin-right: 23px
+                        font-size: .9em
+                        padding-left: 0
+                        padding-right: 0
+                        text-align: center
+                        width: 100%
+@media only screen and (max-width: 540px)
+    .banner 
+        padding-left: 15px
+        padding-right: 15px
+@media only screen and (max-width: 460px)
+    .banner 
+        text-align: center

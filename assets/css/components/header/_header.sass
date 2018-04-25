@@ -1,0 +1,25 @@
+.header
+    .container  
+        align-items: center
+        @extend .flex
+        justify-content: space-between
+        max-width: 100% 
+        padding: 35px
+@media only screen and (min-width: 738px)
+      .header  
+        .navigation
+            >ul 
+                >li 
+                    &:last-child 
+                        display: none  
+@media only screen and (max-width: 737px)
+    .header 
+        .navigation
+            >ul 
+                >li 
+                    &:not(:last-child)
+                        display: none!important
+@media only screen and (max-width: 540px)
+    .header 
+        .container 
+            padding: 20px
